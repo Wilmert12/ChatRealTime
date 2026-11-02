@@ -1,0 +1,41 @@
+.chat-card {
+    height: 72vh;
+    min-height: 420px;
+}
+
+.chat-messages {
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    background: var(--bs-tertiary-bg);
+}
+
+.chat-bubble {
+    max-width: 78%;
+    padding: .5rem .8rem;
+    border-radius: 1rem;
+    overflow-wrap: anywhere;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .06);
+}
+
+.chat-bubble.mine {
+    background: var(--bs-primary);
+    color: #fff;
+    border-bottom-right-radius: .25rem;
+}
+
+.chat-bubble.theirs {
+    background: var(--bs-body-bg);
+    border: 1px solid var(--bs-border-color);
+    border-bottom-left-radius: .25rem;
+}
+
+.chat-meta {
+    font-size: .72rem;
+    opacity: .75;
+    margin-bottom: .1rem;
+}
+
+#roomList .list-group-item.active {
+    font-weight: 600;
+}

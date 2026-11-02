@@ -1,0 +1,61 @@
+@page
+@{
+    ViewData["Title"] = "SignalR Chat";
+}
+
+<div class="row g-3">
+
+    
+    <div class="col-12 col-md-4 col-lg-3">
+        <div class="card shadow-sm mb-3">
+            <div class="card-body">
+                <label for="userInput" class="form-label fw-semibold">Tu nombre</label>
+                <input id="userInput" class="form-control" maxlength="40"
+                       placeholder="Ej. Ana" autocomplete="off" />
+            </div>
+        </div>
+
+        <div class="card shadow-sm">
+            <div class="card-header fw-semibold">Salas</div>
+            <div id="roomList" class="list-group list-group-flush">
+                <button type="button" data-room="Desarrollo" disabled
+                        class="list-group-item list-group-item-action">
+                    <i class="bi bi-code-slash me-2" aria-hidden="true"></i>Desarrollo
+                </button>
+                <button type="button" data-room="Diseño" disabled
+                        class="list-group-item list-group-item-action">
+                    <i class="bi bi-palette me-2" aria-hidden="true"></i>Diseño
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-md-8 col-lg-9">
+        <div class="card shadow-sm chat-card">
+            <div class="card-header fw-semibold" id="roomTitle">
+                Elige una sala
+            </div>
+
+            <div id="messagesList" class="card-body chat-messages"></div>
+
+            <div class="card-footer bg-body">
+                <div id="feedback" class="alert alert-danger py-2 mb-2 d-none"
+                     role="alert"></div>
+
+                <form id="chatForm" class="input-group" autocomplete="off">
+                    <input id="messageInput" class="form-control" maxlength="1000"
+                           placeholder="Escribe un mensaje..." disabled />
+                    <button id="sendButton" type="submit"
+                            class="btn btn-primary" disabled>
+                        Enviar
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="~/js/signalr/dist/browser/signalr.min.js">
+</script>
+<script src="~/js/chat.js"></script>
